@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ExpenseForm from "./ExpenseForm";
-import "./NewExpense.css";
+import styles from "./NewExpense.module.css";
 
 const NewExpense = (props) => {
   const [showExpenseForm, setShowExpenseForm] = useState(false);
@@ -22,7 +22,7 @@ const NewExpense = (props) => {
   };
 
   return (
-    <div className="new-expense">
+    <div className={styles["new-expense"]}>
       {!showExpenseForm && <button type="button" onClick={showExpenseFormHandler}>Add Expense</button>}
       {showExpenseForm && <ExpenseForm onCancel={hideExpenseFormHandler} onSaveExpenseData={onSaveExpenseData} />}
     </div>
